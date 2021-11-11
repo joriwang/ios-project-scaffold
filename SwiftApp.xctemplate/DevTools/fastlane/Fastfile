@@ -1,0 +1,148 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+require 'json'
+require 'xcodeproj'
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :adhoc do
+    cocoapods(
+      clean_install: true
+    )
+
+    name = sh("date +\"%Y-%m-%d_%H-%M\"")
+    name = name.delete("\n")
+
+    curDir = sh("pwd")
+    curDir = curDir.delete("\n")
+    curDir = curDir.strip()
+    baseDir = sh("a=#{curDir};echo ${a%/*}")
+    baseDir = baseDir.delete("\n")
+
+    emailJsonPath = "#{curDir}/emails.json"
+    buildConfigPath = "#{curDir}/build.json"
+
+    ipaPath = "#{baseDir}/ipa/#{name}.ipa"
+    ipaOBS = "obs://res-jori/chongya/teacher-ios/itms/ipa/#{name}.ipa"
+    ipaURL = "https://res-jori.obs.cn-north-1.myhuaweicloud.com/chongya/teacher-ios/itms/ipa/#{name}.ipa"
+
+    manifestPath = "#{baseDir}/ipa/manifest.plist"
+    exportOptionsPath = "#{baseDir}/ExportOptions.plist"
+    archivePath = "#{baseDir}/archive/#{name}"
+
+    htmlPath = "#{baseDir}/build/adhoc-template.html"
+    htmlObs = "obs://res-jori/chongya/teacher-ios/itms/html/#{name}.html"
+    htmlURL = "https://res-jori.obs.cn-north-1.myhuaweicloud.com/chongya/teacher-ios/itms/html/#{name}.html"
+    
+    buildConfig =  _readJson(buildConfigPath)
+
+    _updateExportOptions(ipaURL, exportOptionsPath, buildConfig["teamId"])
+
+    build_app(
+      workspace: buildConfig['workspace'], 
+      scheme: buildConfig['scheme'],
+      clean: true,
+      destination: "generic/platform=iOS",
+      configuration: "Adhoc",
+      output_directory: "./ipa",
+      output_name: name,
+      archive_path: archivePath,
+      export_method: "ad-hoc",
+      export_options: exportOptionsPath
+    )
+
+    _generateHtml(htmlPath, name)
+
+    sh("obsutil cp #{ipaPath} obs://res-jori/chongya/teacher-ios/itms/ipa/#{name}.ipa -acl=public-read")
+    sh("obsutil cp #{manifestPath} obs://res-jori/chongya/teacher-ios/itms/manifest/#{name}.plist -acl=public-read")
+    sh("obsutil cp #{htmlPath} #{htmlObs} -acl=public-read")
+
+    emailList = _readEmailList(emailJsonPath)
+    puts emailList
+    _sendEmail(htmlURL, "上传成功，请点击安装 #{name}", "App Beta #{name}", emailList)
+
+    _showNotification("this is title", "this is message")
+  end
+end
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :test do
+    project_path = '/Users/jori/project/ChongYaProjectScaffold/ChongYaProjectScaffold/ChongYaProjectScaffold.xcodeproj'
+    project = Xcodeproj::Project.open(project_path)
+    puts project
+  end
+end
+
+def _generateHtml(src, versionName)
+  aFile = File.new(src, "r")
+  content = ""
+  if aFile
+    content = aFile.sysread(1000000)
+    aFile.close()
+
+    content = content.sub("##<manifest>##", versionName)
+    content = content.sub("##<title>##", "新版本 #{versionName} 点击安装")
+
+    aFile = File.new(src, "w")
+    aFile.syswrite(content)
+    puts content
+  else
+    puts "Unable to open file!"
+  end
+end
+
+def _showNotification (title, message)
+  notification(title: title, message: message)
+end
+
+def _sendEmail (url, message, title, emailList)
+  sendemail(email_list: emailList, title: title, url: url)
+end
+
+def _readJson(path)
+  json = File.read(path)
+  jsonObj = JSON.parse(json)
+  return jsonObj
+end
+
+def _readEmailList(path)
+  jsonObjList = _readJson(path)
+  list = ""
+  jsonObjList.each do |ele|
+    if list.empty?
+      list = ele['email']
+    else
+      list = "#{list},#{ele['email']}"
+    end
+  end
+  return list
+end
+
+def _updateExportOptions (ipaURL, filePath, teamId)
+  update_plist(
+    plist_path: filePath,
+    block: proc do |plist|
+      dic = plist['manifest']
+      dic['appURL'] = ipaURL
+      plist['manifest'] = dic
+      if !teamId.empty?
+        plist['teamID'] = teamId
+      end
+    end
+  )
+end
