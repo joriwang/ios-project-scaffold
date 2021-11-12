@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8843C21D273E08F80075388C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843C21C273E08F80075388C /* AppDelegate.swift */; };
-		8843C21F273E08F80075388C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843C21E273E08F80075388C /* SceneDelegate.swift */; };
 		8843C226273E08F80075388C /* IndexBarBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843C225273E08F80075388C /* IndexBarBubbleView.swift */; };
 		8843C228273E08F80075388C /* EFAutoScrollLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843C227273E08F80075388C /* EFAutoScrollLabel.swift */; };
 		8843C22A273E08F80075388C /* IndexBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843C229273E08F80075388C /* IndexBar.swift */; };
@@ -29,6 +27,8 @@
 		8843C24E273E08FB0075388C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8843C24D273E08FB0075388C /* Assets.xcassets */; };
 		8843C251273E08FB0075388C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8843C24F273E08FB0075388C /* LaunchScreen.storyboard */; };
 		8843C25C273E0B390075388C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843C25B273E0B390075388C /* R.generated.swift */; };
+		88DA47C22741389800D103B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA47C02741389800D103B5 /* AppDelegate.swift */; };
+		88DA47C32741389800D103B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA47C12741389800D103B5 /* SceneDelegate.swift */; };
 		CB5E96548B7C1BF962F0327A /* Pods_SwiftProjectScaffold.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12254659921049C16E950A3F /* Pods_SwiftProjectScaffold.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +37,6 @@
 		2B6BEBCF3D1EEA8CF41AFECF /* Pods-SwiftProjectScaffold.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectScaffold.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectScaffold/Pods-SwiftProjectScaffold.release.xcconfig"; sourceTree = "<group>"; };
 		7E7F7DA0F463CC2FB56813EC /* Pods-SwiftProjectScaffold.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectScaffold.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectScaffold/Pods-SwiftProjectScaffold.debug.xcconfig"; sourceTree = "<group>"; };
 		8843C218273E08F80075388C /* SwiftProjectScaffold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProjectScaffold.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8843C21C273E08F80075388C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		8843C21E273E08F80075388C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../SceneDelegate.swift; sourceTree = "<group>"; };
 		8843C225273E08F80075388C /* IndexBarBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexBarBubbleView.swift; sourceTree = "<group>"; };
 		8843C227273E08F80075388C /* EFAutoScrollLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFAutoScrollLabel.swift; sourceTree = "<group>"; };
 		8843C229273E08F80075388C /* IndexBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexBar.swift; sourceTree = "<group>"; };
@@ -59,8 +57,10 @@
 		8843C24B273E08F80075388C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8843C24D273E08FB0075388C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8843C250273E08FB0075388C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8843C252273E08FB0075388C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8843C25B273E0B390075388C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		88DA47BE2741383900D103B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88DA47C02741389800D103B5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88DA47C12741389800D103B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,6 @@
 				8843C21B273E08F80075388C /* Application */,
 				8843C24D273E08FB0075388C /* Assets.xcassets */,
 				8843C23F273E08F80075388C /* Foundation */,
-				8843C252273E08FB0075388C /* Info.plist */,
 				8843C24F273E08FB0075388C /* LaunchScreen.storyboard */,
 				8843C24A273E08F80075388C /* Main.storyboard */,
 				8843C236273E08F80075388C /* Network */,
@@ -122,8 +121,8 @@
 		8843C21B273E08F80075388C /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				8843C21C273E08F80075388C /* AppDelegate.swift */,
-				8843C21E273E08F80075388C /* SceneDelegate.swift */,
+				88DA47C02741389800D103B5 /* AppDelegate.swift */,
+				88DA47C12741389800D103B5 /* SceneDelegate.swift */,
 				8843C246273E08F80075388C /* ApplicationHandler.swift */,
 			);
 			path = Application;
@@ -182,6 +181,7 @@
 		8843C242273E08F80075388C /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				88DA47BE2741383900D103B5 /* Info.plist */,
 				8843C243273E08F80075388C /* SwiftProjectScaffold-Bridging-Header.h */,
 				8843C244273E08F80075388C /* SDKConfig.plist */,
 			);
@@ -354,18 +354,18 @@
 			files = (
 				8843C226273E08F80075388C /* IndexBarBubbleView.swift in Sources */,
 				8843C22C273E08F80075388C /* UIExtension.swift in Sources */,
+				88DA47C22741389800D103B5 /* AppDelegate.swift in Sources */,
 				8843C235273E08F80075388C /* Log.swift in Sources */,
 				8843C228273E08F80075388C /* EFAutoScrollLabel.swift in Sources */,
 				8843C231273E08F80075388C /* PlistReader.swift in Sources */,
 				8843C247273E08F80075388C /* ApplicationHandler.swift in Sources */,
-				8843C21D273E08F80075388C /* AppDelegate.swift in Sources */,
 				8843C233273E08F80075388C /* Permission.swift in Sources */,
 				8843C23A273E08F80075388C /* NetworkCore.swift in Sources */,
 				8843C249273E08F80075388C /* ViewController.swift in Sources */,
 				8843C23C273E08F80075388C /* MoyaPlugins.swift in Sources */,
 				8843C25C273E0B390075388C /* R.generated.swift in Sources */,
 				8843C238273E08F80075388C /* NetworkDefine.swift in Sources */,
-				8843C21F273E08F80075388C /* SceneDelegate.swift in Sources */,
+				88DA47C32741389800D103B5 /* SceneDelegate.swift in Sources */,
 				8843C23E273E08F80075388C /* CYNet.swift in Sources */,
 				8843C22A273E08F80075388C /* IndexBar.swift in Sources */,
 				8843C241273E08F80075388C /* FoundationExtension.swift in Sources */,
@@ -519,9 +519,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 743P2V24ND;
+				DEVELOPMENT_TEAM = N9MHWL4LN9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SwiftProjectScaffold/Info.plist;
+				INFOPLIST_FILE = SwiftProjectScaffold/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -550,9 +550,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 743P2V24ND;
+				DEVELOPMENT_TEAM = N9MHWL4LN9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SwiftProjectScaffold/Info.plist;
+				INFOPLIST_FILE = SwiftProjectScaffold/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -636,14 +636,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 743P2V24ND;
+				DEVELOPMENT_TEAM = N9MHWL4LN9;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
 					"ADHOC=1",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SwiftProjectScaffold/Info.plist;
+				INFOPLIST_FILE = SwiftProjectScaffold/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

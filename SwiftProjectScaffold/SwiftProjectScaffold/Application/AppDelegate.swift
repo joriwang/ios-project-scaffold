@@ -5,14 +5,13 @@
 //  Created by Jori on 2021/11/5.
 //
 
-//1. 删除工程中红色标记的文件夹（Group）。注意：仅删除引用
-//2. 修改 Podfile 中的 target 为正确的名称
-//3. 复制 Release Configuration，并命名为 Adhoc
-//4. 在 Adhoc 的 "Preprocessor Macros" 中添加 “ADHOC=1”
-//5. 修改工程的最低适配版本不低于 iOS 12
-//6. 安装 cocoapods 依赖
-//7. 参照 https://github.com/mac-cain13/R.swift 配置 R.swift
-//8. 删除这段说明
+1. 删除工程中红色标记的文件夹（Group）。注意：仅删除引用
+2. 修改 Podfile 中的 target 为正确的名称
+3. 修改工程的最低适配版本不低于 iOS 12
+4. 安装 cocoapods 依赖
+5. 如果报错 “Multiple process *** Info.plist” 请尝试删除如下信息“Build Phase -> Copy Bundle Resources -> Info.plist”
+6. 参照 https://github.com/mac-cain13/R.swift 配置 R.swift
+7. 删除这段说明
 
 import UIKit
 

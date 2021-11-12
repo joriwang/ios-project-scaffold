@@ -18,10 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-Td-gXp">
-                                <rect key="frame" x="167" y="428" width="80" height="40"/>
+                                <rect key="frame" x="173.5" y="428" width="67" height="40"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.3411764706" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Hdg-UZ-kif"/>
                                     <constraint firstAttribute="height" constant="40" id="iMm-SP-SQa"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -35,7 +34,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
                         <constraints>
                             <constraint firstItem="aT8-Td-gXp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Zi-G5-ggJ"/>
                             <constraint firstItem="aT8-Td-gXp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LQ7-HH-CbA"/>

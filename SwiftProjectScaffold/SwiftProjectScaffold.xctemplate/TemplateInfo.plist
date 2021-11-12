@@ -8,7 +8,36 @@
 	<string>com.jori.swift.singleViewApplication</string>
 	<key>Ancestors</key>
 	<array>
-		<string>com.apple.dt.unit.sceneLifecycleApplication</string>
+		<string>com.apple.dt.unit.appLifecycle.iOS</string>
+		<string>com.apple.dt.unit.languageChoice.app.iOS</string>
+		<string>com.apple.dt.unit.iosBase</string>
+		<string>com.apple.dt.unit.applicationBase</string>
+	</array>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaTouchApplicationTarget</string>
+			<key>SharedSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>___PACKAGENAME___/Support/Info.plist</string>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
+				<string>AccentColor</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents</key>
+				<string>YES</string>
+				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone</key>
+				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
+				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad</key>
+				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
+			</dict>
+		</dict>
 	</array>
 	<key>Concrete</key>
 	<true/>
@@ -20,45 +49,33 @@
 	<array>
 		<dict>
 			<key>Identifier</key>
-			<string>languageChoice</string>
+			<string>appLifecycle</string>
 			<key>Units</key>
 			<dict>
-				<key>Objective-C</key>
+				<key>Cocoa</key>
 				<dict>
 					<key>Nodes</key>
 					<array>
-						<string>ViewController.h:comments</string>
-						<string>ViewController.h:imports:importCocoa</string>
-						<string>ViewController.h:interface(___FILEBASENAME___ : UIViewController)</string>
-						<string>ViewController.m:comments</string>
-						<string>ViewController.m:imports:importHeader:ViewController.h</string>
-						<string>ViewController.m:extension</string>
-						<string>ViewController.m:implementation:methods:viewDidLoad(- (void\)viewDidLoad)</string>
-						<string>ViewController.m:implementation:methods:viewDidLoad:super</string>
-						<string>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</string>
-						<string>Base.lproj/Main.storyboard</string>
+						<string>Base.lproj/LaunchScreen.storyboard</string>
 					</array>
-					<key>Definitions</key>
-					<dict>
-						<key>Base.lproj/Main.storyboard</key>
-						<dict>
-							<key>Path</key>
-							<string>Main.storyboard</string>
-							<key>SortOrder</key>
-							<integer>98</integer>
-						</dict>
-					</dict>
 					<key>Targets</key>
 					<array>
 						<dict>
 							<key>SharedSettings</key>
 							<dict>
-								<key>INFOPLIST_KEY_UIMainStoryboardFile</key>
-								<string>Main</string>
+								<key>INFOPLIST_KEY_UILaunchStoryboardName</key>
+								<string>LaunchScreen</string>
 							</dict>
 						</dict>
 					</array>
 				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
 				<key>Swift</key>
 				<array>
 					<dict>
@@ -69,7 +86,8 @@
 						</dict>
 						<key>Nodes</key>
 						<array>
-							<string>../</string>
+							<string>Support/Info.plist</string>
+							<string>../Podfile</string>
 							<string>UI/TableViewIndexView/IndexBarBubbleView.swift</string>
 							<string>UI/EFAutoScrollLabel.swift</string>
 							<string>UI/TableViewIndexView/IndexBar.swift</string>
@@ -95,10 +113,17 @@
 						</array>
 						<key>Definitions</key>
 						<dict>
-							<key>../</key>
+							<key>Support/Info.plist</key>
 							<dict>
 								<key>Group</key>
-								<string></string>
+								<string>Support</string>
+								<key>Path</key>
+								<string>../SwiftProjectScaffold/Support/Info.plist</string>
+							</dict>
+							<key>../Podfile</key>
+							<dict>
+								<key>Group</key>
+								<string>-delete group reference-</string>
 								<key>Path</key>
 								<string>../Podfile</string>
 							</dict>
@@ -291,6 +316,27 @@
 	<dict>
 		<key>BundleIdentifier</key>
 		<string>com.apple.dt.IDEKit</string>
+	</dict>
+	<key>Nodes</key>
+	<array>
+		<string>Assets.xcassets</string>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>Assets.xcassets</key>
+		<dict>
+			<key>Path</key>
+			<string>../SwiftProjectScaffold/Assets.xcassets</string>
+			<key>SortOrder</key>
+			<integer>100</integer>
+		</dict>
+		<key>Base.lproj/LaunchScreen.storyboard</key>
+		<dict>
+			<key>Path</key>
+			<string>../SwiftProjectScaffold/Base.lproj/LaunchScreen.storyboard</string>
+			<key>SortOrder</key>
+			<integer>101</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>
