@@ -98,11 +98,9 @@
 							<key>../</key>
 							<dict>
 								<key>Group</key>
-								<array>
-									<string>-delete group reference-</string>
-								</array>
+								<string></string>
 								<key>Path</key>
-								<string>DevTools</string>
+								<string>../Podfile</string>
 							</dict>
 							<key>UI/TableViewIndexView/IndexBarBubbleView.swift</key>
 							<dict>
@@ -112,12 +110,12 @@
 									<string>TableViewIndexView</string>
 								</array>
 								<key>Path</key>
-								<string>Project/UI/TableViewIndexView/IndexBarBubbleView.swift</string>
+								<string>../SwiftProjectScaffold/UI/TableViewIndexView/IndexBarBubbleView.swift</string>
 							</dict>
 							<key>UI/TableViewIndexView/IndexBar.swift</key>
 							<dict>
 								<key>Path</key>
-								<string>Project/UI/TableViewIndexView/IndexBar.swift</string>
+								<string>../SwiftProjectScaffold/UI/TableViewIndexView/IndexBar.swift</string>
 								<key>Group</key>
 								<array>
 									<string>UI</string>
@@ -129,14 +127,14 @@
 								<key>Group</key>
 								<string>UI</string>
 								<key>Path</key>
-								<string>Project/UI/UIExtension.swift</string>
+								<string>../SwiftProjectScaffold/UI/UIExtension.swift</string>
 							</dict>
 							<key>UI/EFAutoScrollLabel.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>UI</string>
 								<key>Path</key>
-								<string>Project/UI/EFAutoScrollLabel.swift</string>
+								<string>../SwiftProjectScaffold/UI/EFAutoScrollLabel.swift</string>
 							</dict>
 							<key>Tools/Security.swift</key>
 							<dict>
@@ -148,7 +146,7 @@
 							<key>Tools/PlistReader.swift</key>
 							<dict>
 								<key>Path</key>
-								<string>Project/Tools/PlistReader.swift</string>
+								<string>../SwiftProjectScaffold/Tools/PlistReader.swift</string>
 								<key>Group</key>
 								<string>Tools</string>
 							</dict>
@@ -157,47 +155,47 @@
 								<key>Group</key>
 								<string>Tools</string>
 								<key>Path</key>
-								<string>Project/Tools/Permission.swift</string>
+								<string>../SwiftProjectScaffold/Tools/Permission.swift</string>
 							</dict>
 							<key>Tools/Log.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>Tools</string>
 								<key>Path</key>
-								<string>Project/Tools/Log.swift</string>
+								<string>../SwiftProjectScaffold/Tools/Log.swift</string>
 							</dict>
 							<key>Network/NetworkDefine.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>Network</string>
 								<key>Path</key>
-								<string>Project/Network/NetworkDefine.swift</string>
+								<string>../SwiftProjectScaffold/Network/NetworkDefine.swift</string>
 							</dict>
 							<key>Network/NetworkCore.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>Network</string>
 								<key>Path</key>
-								<string>Project/Network/NetworkCore.swift</string>
+								<string>../SwiftProjectScaffold/Network/NetworkCore.swift</string>
 							</dict>
 							<key>Network/MoyaPlugins.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>Network</string>
 								<key>Path</key>
-								<string>Project/Network/MoyaPlugins.swift</string>
+								<string>../SwiftProjectScaffold/Network/MoyaPlugins.swift</string>
 							</dict>
 							<key>Network/CYNet.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>Network</string>
 								<key>Path</key>
-								<string>Project/Network/CYNet.swift</string>
+								<string>../SwiftProjectScaffold/Network/CYNet.swift</string>
 							</dict>
 							<key>Foundation/FoundationExtension.swift</key>
 							<dict>
 								<key>Path</key>
-								<string>Project/Foundation/FoundationExtension.swift</string>
+								<string>../SwiftProjectScaffold/Foundation/FoundationExtension.swift</string>
 								<key>Group</key>
 								<string>Foundation</string>
 							</dict>
@@ -220,38 +218,38 @@
 								<key>Group</key>
 								<string>Support</string>
 								<key>Path</key>
-								<string>Project/Support/SDKConfig.plist</string>
+								<string>../SwiftProjectScaffold/Support/SDKConfig.plist</string>
 							</dict>
 							<key>Application/ApplicationHandler.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>Application</string>
 								<key>Path</key>
-								<string>Project/Application/ApplicationHandler.swift</string>
+								<string>../SwiftProjectScaffold/Application/ApplicationHandler.swift</string>
 							</dict>
 							<key>AppDelegate.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>Application</string>
 								<key>Path</key>
-								<string>Project/Application/AppDelegate.swift</string>
+								<string>../SwiftProjectScaffold/Application/AppDelegate.swift</string>
 							</dict>
 							<key>SceneDelegate.swift</key>
 							<dict>
 								<key>Group</key>
 								<string>Application</string>
 								<key>Path</key>
-								<string>Project/Application/SceneDelegate.swift</string>
+								<string>../SwiftProjectScaffold/Application/SceneDelegate.swift</string>
 							</dict>
 							<key>ViewController.swift</key>
 							<dict>
 								<key>Path</key>
-								<string>Project/ViewController.swift</string>
+								<string>../SwiftProjectScaffold/ViewController.swift</string>
 							</dict>
 							<key>Base.lproj/Main.storyboard</key>
 							<dict>
 								<key>Path</key>
-								<string>Main.storyboard</string>
+								<string>../SwiftProjectScaffold/Base.lproj/Main.storyboard</string>
 								<key>SortOrder</key>
 								<integer>98</integer>
 							</dict>
