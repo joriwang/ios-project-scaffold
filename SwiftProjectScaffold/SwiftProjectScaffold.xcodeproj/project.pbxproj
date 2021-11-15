@@ -207,6 +207,7 @@
 				CAE7A1FB32CB500C8974FC16 /* [CP] Check Pods Manifest.lock */,
 				8843C25A273E0ABE0075388C /* R.swift */,
 				8843C214273E08F80075388C /* Sources */,
+				883FB5C62742670900A2B55B /* SwiftLint */,
 				8843C215273E08F80075388C /* Frameworks */,
 				8843C216273E08F80075388C /* Resources */,
 				5212CADCF39922CEEC0D6DF7 /* [CP] Embed Pods Frameworks */,
@@ -285,6 +286,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftProjectScaffold/Pods-SwiftProjectScaffold-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		883FB5C62742670900A2B55B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --path \"${SRCROOT}/${PROJECT_NAME}\"\n";
 		};
 		8843C25A273E0ABE0075388C /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;

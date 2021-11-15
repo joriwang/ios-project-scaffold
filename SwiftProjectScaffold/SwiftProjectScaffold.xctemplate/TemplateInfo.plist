@@ -295,6 +295,39 @@
 									<key>INFOPLIST_KEY_UIMainStoryboardFile</key>
 									<string>Main</string>
 								</dict>
+								<key>BuildPhases</key>
+								<array>
+									<dict>
+										<key>OutputFiles</key>
+										<array>
+											<string>$SRCROOT/R.generated.swift</string>
+										</array>
+										<key>InputFiles</key>
+										<array>
+											<string>$TEMP_DIR/rswift-lastrun</string>
+										</array>
+										<key>ShellScript</key>
+										<string>if [ $ACTION != &quot;indexbuild&quot; ]; then
+  &quot;$PODS_ROOT/R.swift/rswift&quot; generate &quot;$SRCROOT/R.generated.swift&quot;
+fi</string>
+										<key>Name</key>
+										<string>R.swift</string>
+										<key>ShellPath</key>
+										<string>/bin/sh</string>
+										<key>Class</key>
+										<string>ShellScript</string>
+									</dict>
+									<dict>
+										<key>ShellScript</key>
+										<string>&quot;${PODS_ROOT}/SwiftLint/swiftlint&quot; lint --path &quot;${SRCROOT}/${PROJECT_NAME}&quot;</string>
+										<key>Name</key>
+										<string>SwiftLint</string>
+										<key>ShellPath</key>
+										<string>/bin/sh</string>
+										<key>Class</key>
+										<string>ShellScript</string>
+									</dict>
+								</array>
 							</dict>
 						</array>
 					</dict>

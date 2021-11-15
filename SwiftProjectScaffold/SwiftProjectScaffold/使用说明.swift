@@ -12,5 +12,5 @@ import Foundation
 3. 修改工程的最低适配版本不低于 iOS 12
 4. 安装 cocoapods 依赖
 5. 如果报错 “Multiple process *** Info.plist” 请尝试删除如下信息“Build Phase -> Copy Bundle Resources -> Info.plist”
-6. 参照 https://github.com/mac-cain13/R.swift 配置 R.swift
+6. 调整 “Build Phase”顺序。"[CP] Check Pods Manifest.lock" -> "R.swift" -> "Compile Sources" -> "SwiftLint"
 7. 删除这段说明
