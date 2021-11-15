@@ -14,16 +14,16 @@ import Hue
 
 extension TZImagePickerController {
     static func makeInstance<T: TZImagePickerControllerDelegate>(withMaxCount maxCount: Int, delegate: T) -> TZImagePickerController {
-        let vc = TZImagePickerController(maxImagesCount: maxCount, columnNumber: 4, delegate: delegate)!
-        vc.modalPresentationStyle = .fullScreen
-        vc.naviBgColor = UIColor(hex: "#ffcc00")
-        vc.allowPickingGif = false
-        vc.allowPickingVideo = false
-        vc.allowPickingImage = true
-        vc.allowPreview = false
-        vc.allowCrop = true
+        let controller = TZImagePickerController(maxImagesCount: maxCount, columnNumber: 4, delegate: delegate)!
+        controller.modalPresentationStyle = .fullScreen
+        controller.naviBgColor = UIColor(hex: "#ffcc00")
+        controller.allowPickingGif = false
+        controller.allowPickingVideo = false
+        controller.allowPickingImage = true
+        controller.allowPreview = false
+        controller.allowCrop = true
         
-        return vc
+        return controller
     }
 }
 
@@ -53,13 +53,13 @@ extension UICollectionViewCell {
     @objc func refreshSuper() {
         var superV = superview
         var deepLimit = 1000
-        while let s = superV, deepLimit > 0 {
-            if s.isKind(of: UICollectionView.self) {
-                (s as! UICollectionView).reloadData()
+        while let sup = superV, deepLimit > 0 {
+            if sup.isKind(of: UICollectionView.self), let target = sup as? UICollectionView {
+                target.reloadData()
                 break
             }
-            deepLimit = deepLimit - 1
-            superV = s.superview
+            deepLimit -= 1
+            superV = sup.superview
         }
     }
 }
@@ -74,13 +74,13 @@ extension UITableViewCell {
     func refreshSuper() {
         var superV = superview
         var deepLimit = 1000
-        while let s = superV, deepLimit > 0 {
-            if s.isKind(of: UITableView.self) {
-                (s as! UITableView).reloadData()
+        while let sup = superV, deepLimit > 0 {
+            if sup.isKind(of: UITableView.self), let target = sup as? UITableView {
+                target.reloadData()
                 break
             }
-            deepLimit = deepLimit - 1
-            superV = s.superview
+            deepLimit -= 1
+            superV = sup.superview
         }
     }
 }

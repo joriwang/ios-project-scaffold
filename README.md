@@ -14,11 +14,10 @@
 
 使用方法如下：
 
-1. 将 **SwiftProjectScaffold.xctemplate、SwiftProjectScaffold、Podfile** 复制到 `~/Library/Developer/Xcode/Templates`
+1. 将 **SwiftProjectScaffold.xctemplate、SwiftProjectScaffold、Podfile、R.generated.swift** 复制到 `~/Library/Developer/Xcode/Templates`
 2. 打开 Xcode 新建 Project 选择 “SwiftProjectScaffold” 模板（京剧熊猫图标）
 3. 在弹出的对话框中输入项目名称（语言一定要选择 Swift）
 4. 参照新建项目中的文档完成初始化即可
 
-项目创建完成后有两部分需要初始化：
-1. 三方库工具初始化（如：R.swift）
-2. 三方库参数初始化。初始化参数在 **Support/SDKConfig.plist** 中
+项目创建完成后三方SDK初始化：
+1. 三方库参数初始化。初始化参数在 **Support/SDKConfig.plist** 中

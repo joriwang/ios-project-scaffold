@@ -35,6 +35,7 @@ target 'SwiftProjectScaffold' do
 # 调试相关
   pod 'YKWoodpecker', '1.2.9'
   pod 'CocoaLumberjack/Swift', '3.7.2'
+  pod 'SwiftLint', '0.45.0'
 
 end
 

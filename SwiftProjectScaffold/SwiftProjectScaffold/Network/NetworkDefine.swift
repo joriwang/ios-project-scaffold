@@ -24,7 +24,7 @@ extension CYResponseModel where T: HandyJSON {
 extension CYResponseModel where T: Collection, T.Element: HandyJSON {
     static func parse(data: Data) -> CYResponseModel? {
         let obj = CYResponseModel.deserialize(from: String(data: data, encoding: .utf8), designatedPath: nil)
-        if let o = obj, o.data == nil {
+        if let object = obj, object.data == nil {
             return nil
         }
         return obj
@@ -42,7 +42,7 @@ public struct CYProgressResponse<T: HandyJSON> {
 
     /// An object that conveys ongoing progress for a given request.
     public let progressObject: Progress?
-    
+
     public let model: T?
 
     /// Initializes a `ProgressResponse`.

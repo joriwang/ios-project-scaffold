@@ -8,19 +8,19 @@
 import Foundation
 
 private var cache: NSCache<NSString, AnyObject> = {
-    let r = NSCache<NSString, AnyObject>()
-    r.name = "Local Plist Reader Cache"
-    return r
+    let cache = NSCache<NSString, AnyObject>()
+    cache.name = "Local Plist Reader Cache"
+    return cache
 }()
 
 final class PlistReader {
-    
+
     static func read(_ url: URL, cacheEnabled: Bool = true) -> NSDictionary? {
-        let r = NSDictionary(contentsOf: url)
-        if cacheEnabled, let rr = r {
-            cache.setObject(rr, forKey: url.absoluteString as NSString)
+        let dicOpt = NSDictionary(contentsOf: url)
+        if cacheEnabled, let dic = dicOpt {
+            cache.setObject(dic, forKey: url.absoluteString as NSString)
         }
-        return r
+        return dicOpt
     }
     
     fileprivate static func getSDKConfig() -> NSDictionary {

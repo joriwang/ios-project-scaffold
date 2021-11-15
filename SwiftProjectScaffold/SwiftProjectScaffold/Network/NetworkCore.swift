@@ -61,7 +61,7 @@ public extension Reactive where Base: MoyaProviderType {
             }
         }
     }
-    
+
     /// Designated request-making method with progress.
     func cy_requestWithProgress<T: HandyJSON>(_ token: Base.Target, callbackQueue: DispatchQueue? = nil, zclass: T.Type) -> Observable<CYProgressResponse<T>> {
 

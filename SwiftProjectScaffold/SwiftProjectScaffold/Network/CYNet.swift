@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-let net = MoyaProvider<CYNet>(plugins:[MoyaLogPlugin()])
+let net = MoyaProvider<CYNet>(plugins: [MoyaLogPlugin()])
 
 enum CYNet {
     case demo
@@ -19,7 +19,7 @@ extension CYNet: TargetType {
     var baseURL: URL {
         return URL(string: "https://my-json-server.typicode.com")!
     }
-    
+
     var path: String {
         switch self {
         case .demo:
@@ -28,27 +28,25 @@ extension CYNet: TargetType {
             return "/joriwang/api-test/moxiu2"
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         case .demo, .demo2:
             return .get
         }
     }
-    
+
     var task: Task {
         switch self {
         case .demo, .demo2:
             return .requestPlain
         }
     }
-    
-    var headers: [String : String]? {
+
+    var headers: [String: String]? {
         switch self {
         case .demo, .demo2:
             return nil
         }
     }
-    
-    
 }

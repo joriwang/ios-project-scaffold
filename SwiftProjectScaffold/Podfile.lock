@@ -37,6 +37,7 @@ PODS:
   - SPPermissions/Core (6.8.4)
   - SPPermissions/LocationAlways (6.8.4):
     - SPPermissions/Core
+  - SwiftLint (0.45.0)
   - SwiftyRSA (1.7.0):
     - SwiftyRSA/ObjC (= 1.7.0)
   - SwiftyRSA/ObjC (1.7.0)
@@ -64,6 +65,7 @@ DEPENDENCIES:
   - SnapKit (= 5.0.1)
   - SPPermissions/Camera
   - SPPermissions/LocationAlways
+  - SwiftLint (= 0.45.0)
   - SwiftyRSA (= 1.7.0)
   - TZImagePickerController (= 3.6.6)
   - UMAPM (= 1.4.2)
@@ -91,6 +93,7 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - SPPermissions
+    - SwiftLint
     - SwiftyRSA
     - TZImagePickerController
     - UMAPM
@@ -117,6 +120,7 @@ SPEC CHECKSUMS:
   SDWebImage: 4ea20cca2986adc5aacde07aa686742fd4c67a37
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SPPermissions: 5bcd18d1f599bdd008182bcbcc0b1c9eb59787a5
+  SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
   SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
   TZImagePickerController: edf61b8e87f26e3e445aa50eb66254bd7f4859db
   UMAPM: 9766611aba84e0755afc785d4399f1e9fbb0a475
@@ -125,6 +129,6 @@ SPEC CHECKSUMS:
   UMDevice: c13bbb2e8ca6c67d1e23e03162553e3ec5a8b5b0
   YKWoodpecker: 5433b65498b2afe2a4adc20642f76ff57e161f2a
 
-PODFILE CHECKSUM: 482bfbb1c9a37cbd66a652fa93a7e17b451442ec
+PODFILE CHECKSUM: 041d734bd89661e62759ca01a14178cd437d0607
 
 COCOAPODS: 1.11.2
