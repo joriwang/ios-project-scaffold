@@ -89,8 +89,8 @@ public class EFAutoScrollLabel: UIView {
             return
         }
 
-        for l in labels {
-            l.text = text
+        for label in labels {
+            label.text = text
         }
 
         if refresh {
@@ -111,8 +111,8 @@ public class EFAutoScrollLabel: UIView {
         if text == self.attributedText {
             return
         }
-        for l in labels {
-            l.attributedText = text
+        for label in labels {
+            label.attributedText = text
         }
         if refresh {
             refreshLabels()
@@ -166,9 +166,7 @@ public class EFAutoScrollLabel: UIView {
     }
 
     public override var intrinsicContentSize: CGSize {
-        get {
-            return CGSize(width: 0.0, height: self.mainLabel.intrinsicContentSize.height)
-        }
+        return CGSize(width: 0.0, height: self.mainLabel.intrinsicContentSize.height)
     }
 
     // Only applies when not auto-scrolling
@@ -176,21 +174,24 @@ public class EFAutoScrollLabel: UIView {
 
     // Views
     private var labels: [UILabel] = {
-        var ls: [UILabel] = [UILabel]()
+        var tempLabels: [UILabel] = [UILabel]()
         for index in 0 ..< EFAutoScrollLabel.kLabelCount {
-            ls.append(UILabel())
+            tempLabels.append(UILabel())
         }
-        return ls
+        return tempLabels
     }()
     private var mainLabel: UILabel {
         return labels.first ?? UILabel()
     }
 
     lazy public private(set) var scrollView: UIScrollView = {
-        let sv = UIScrollView(frame: self.bounds)
-        sv.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
-        sv.backgroundColor = UIColor.clear
-        return sv
+        let tempScrollView = UIScrollView(frame: self.bounds)
+        tempScrollView.autoresizingMask = [
+            UIView.AutoresizingMask.flexibleWidth,
+            UIView.AutoresizingMask.flexibleHeight
+        ]
+        tempScrollView.backgroundColor = UIColor.clear
+        return tempScrollView
     }()
 
     public override init(frame: CGRect) {
@@ -254,7 +255,7 @@ public class EFAutoScrollLabel: UIView {
             didChangeFrame()
         }
     }
-    
+
     @objc func applyDefaultConfig() {
         self.pauseInterval = 0
         self.scrollSpeed = 30
@@ -303,8 +304,14 @@ public class EFAutoScrollLabel: UIView {
             return
         }
 
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded), object: nil)
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(EFAutoScrollLabel.enableShadow), object: nil)
+        NSObject.cancelPreviousPerformRequests(
+            withTarget: self,
+            selector: #selector(EFAutoScrollLabel.scrollLabelIfNeeded),
+            object: nil)
+        NSObject.cancelPreviousPerformRequests(
+            withTarget: self,
+            selector: #selector(EFAutoScrollLabel.enableShadow),
+            object: nil)
 
         self.scrollView.layer.removeAllAnimations()
 

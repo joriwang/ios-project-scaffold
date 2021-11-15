@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 
+// swiftlint:disable all
 struct MoyaLogPlugin: PluginType {
     func willSend(_ request: RequestType, target: TargetType) {
         guard let url = request.request?.url else {
@@ -32,3 +33,4 @@ struct MoyaLogPlugin: PluginType {
         }
     }
 }
+// swiftlint:enable all

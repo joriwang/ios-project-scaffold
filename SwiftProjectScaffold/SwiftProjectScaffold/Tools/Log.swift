@@ -8,16 +8,18 @@
 import Foundation
 import CocoaLumberjack
 
+// swiftlint:disable type_name
 final class log {
     static func d(_ message: String) {
         DDLogDebug(message, file: "hehe", line: 10086)
     }
-    
+
     static func i(_ message: String) {
         DDLogInfo(message)
     }
-    
+
     static func e(_ message: String) {
         DDLogError(message)
     }
 }
+// swiftlint:enable type_name

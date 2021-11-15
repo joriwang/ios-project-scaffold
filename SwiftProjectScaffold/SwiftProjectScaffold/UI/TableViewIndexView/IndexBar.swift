@@ -13,7 +13,7 @@ public protocol IndexBarDelegate: AnyObject {
     func indexBar(_ indexBar: IndexBar, didSelected index: Int)
 }
 
-fileprivate enum IndexSectionState {
+private enum IndexSectionState {
     case normal
     case selected
 }
@@ -72,17 +72,17 @@ public class IndexBar: UIView, UITableViewDelegate {
             _configure.sectionSpacing = newValue
         }
     }
-    
-    ///if you want to listen the callback of section seleced, please set the delegate(如果想监听切换section的回调可实现此代理)
+
+    // if you want to listen the callback of section seleced, please set the delegate(如果想监听切换section的回调可实现此代理)
     public weak var delegate: IndexBarDelegate?
     /// configure index bar
-    public var configure: ((inout IndexBarConfigure) -> ())? {
+    public var configure: ((inout IndexBarConfigure) -> Void)? {
         willSet {
             newValue?(&_configure)
             initUI()
         }
     }
-    
+
     private var dataSource = [String]()
     private var lastSelectedLabel: UILabel?
     private var lastSelectedIndex = -1
@@ -91,10 +91,10 @@ public class IndexBar: UIView, UITableViewDelegate {
     private var observe: NSKeyValueObservation?
     private var bubbleView: IndexBarBubbleView?
     private var _configure = IndexBarConfigure()
-    
+
     // MARK: - Init data
-    
-    ///Use this function to init data
+
+    /// Use this function to init data
     @objc public func setData(_ titles: [String], tableView: UITableView) {
         self.dataSource = titles
         self.tableView = tableView
@@ -103,16 +103,16 @@ public class IndexBar: UIView, UITableViewDelegate {
     }
 
     // MARK: - UI
-    
+
     private func initUI() {
         backgroundColor = .clear
         guard !dataSource.isEmpty else {return}
         reset()
         let redundantHeight = bounds.height - (_configure.sectionWH + _configure.sectionSpacing) * CGFloat(dataSource.count)
-        var y: CGFloat = redundantHeight > 0 ? redundantHeight/2 : 0
+        var originY: CGFloat = redundantHeight > 0 ? redundantHeight/2 : 0
         dataSource.forEach({
-            let label = UILabel(frame: CGRect(x: 0, y: y, width: _configure.sectionWH, height: _configure.sectionWH))
-            y += _configure.sectionWH + _configure.sectionSpacing
+            let label = UILabel(frame: CGRect(x: 0, y: originY, width: _configure.sectionWH, height: _configure.sectionWH))
+            originY += _configure.sectionWH + _configure.sectionSpacing
             label.text = $0
             label.textAlignment = .center
             label.layer.cornerRadius = _configure.sectionWH/2
@@ -121,12 +121,12 @@ public class IndexBar: UIView, UITableViewDelegate {
             subLabels.append(label)
             addSubview(label)
         })
-        ///default select first
+        /// default select first
         selectSection(index: 0)
         addObserver()
         addBubbleView()
     }
-    
+
     private func reset() {
         lastSelectedIndex = -1
         lastSelectedLabel = nil
@@ -134,7 +134,7 @@ public class IndexBar: UIView, UITableViewDelegate {
         observe = nil
         subviews.forEach({$0.removeFromSuperview()})
     }
-    
+
     private func addBubbleView() {
         guard _configure.showBubble else {return}
         self.bubbleView?.removeFromSuperview()
@@ -143,7 +143,7 @@ public class IndexBar: UIView, UITableViewDelegate {
         bubbleView.alpha = 0
         self.bubbleView = bubbleView
     }
-    
+
     private func addObserver() {
         observe = tableView?.observe(\.contentOffset, options: .new, changeHandler: { [unowned self] (tableView, change) in
             guard let point = change.newValue else {return}
@@ -152,9 +152,9 @@ public class IndexBar: UIView, UITableViewDelegate {
             self.selectSection(index: indexPath.section)
         })
     }
-    
+
     private func setIndexSection(_ label: UILabel,
-                              with state: IndexSectionState = .normal) {
+                                 with state: IndexSectionState = .normal) {
         switch state {
         case .normal:
             label.textColor = _configure.titleColor
@@ -168,7 +168,7 @@ public class IndexBar: UIView, UITableViewDelegate {
             }
         }
     }
-    
+
     private func selectSection(point: CGPoint) {
         guard point.x <= bounds.width,
             point.y <= bounds.height,
@@ -189,32 +189,32 @@ public class IndexBar: UIView, UITableViewDelegate {
             lastSelectedIndex = index
         }
     }
-    
+
     private func selectSection(index: Int) {
         if let last = lastSelectedLabel {
             setIndexSection(last, with: .normal)
         }
         setIndexSection(subLabels[index], with: .selected)
     }
-    
+
     private func addImpactFeedback() {
         let impact = UIImpactFeedbackGenerator(style: .light)
         impact.prepare()
         impact.impactOccurred()
     }
-    
+
     // MARK: - Touch Event
-    
+
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
     }
-    
+
     public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         guard let point = event?.touches(for: self)?.first?.location(in: self) else {return}
         selectSection(point: point)
     }
-    
+
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         guard let point = event?.touches(for: self)?.first?.location(in: self) else {return}
@@ -222,5 +222,3 @@ public class IndexBar: UIView, UITableViewDelegate {
         bubbleView?.hide()
     }
 }
-
-

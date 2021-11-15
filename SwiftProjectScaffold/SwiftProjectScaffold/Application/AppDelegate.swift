@@ -19,29 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             _window = newValue
         }
     }
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         if #available(iOS 13, *) {
             return true
         }
-        
+
         ApplicationHandler.shared().applicationDidFinishLaunch(self)
         return true
     }
-    
+
     func applicationDidBecomeActive(_ application: UIApplication) {
         ApplicationHandler.shared().applicationDidBecomeActive()
     }
-    
+
     func applicationWillResignActive(_ application: UIApplication) {
         ApplicationHandler.shared().applicationWillResignActive()
     }
-    
+
     func applicationWillEnterForeground(_ application: UIApplication) {
         ApplicationHandler.shared().applicationWillEnterForeground()
     }
-    
+
     func applicationDidEnterBackground(_ application: UIApplication) {
         ApplicationHandler.shared().applicationDidEnterBackground()
     }
@@ -61,7 +61,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
-
