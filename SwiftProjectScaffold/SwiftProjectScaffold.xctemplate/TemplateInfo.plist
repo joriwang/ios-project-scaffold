@@ -86,6 +86,8 @@
 						</dict>
 						<key>Nodes</key>
 						<array>
+							<string>../R.generated.swift</string>
+							<string>../.swiftlint.yml</string>
 							<string>使用说明.swift</string>
 							<string>Support/Info.plist</string>
 							<string>../Podfile</string>
@@ -114,6 +116,20 @@
 						</array>
 						<key>Definitions</key>
 						<dict>
+							<key>../R.generated.swift</key>
+							<dict>
+								<key>Group</key>
+								<string>Tools</string>
+								<key>Path</key>
+								<string>../R.generated.swift</string>
+							</dict>
+							<key>../.swiftlint.yml</key>
+							<dict>
+								<key>Group</key>
+								<string>-delete group reference-</string>
+								<key>Path</key>
+								<string>../SwiftProjectScaffold/.swiftlint.yml</string>
+							</dict>
 							<key>使用说明.swift</key>
 							<dict>
 								<key>Path</key>
