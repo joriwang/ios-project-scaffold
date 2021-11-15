@@ -86,6 +86,7 @@
 						</dict>
 						<key>Nodes</key>
 						<array>
+							<string>使用说明.swift</string>
 							<string>Support/Info.plist</string>
 							<string>../Podfile</string>
 							<string>UI/TableViewIndexView/IndexBarBubbleView.swift</string>
@@ -113,6 +114,11 @@
 						</array>
 						<key>Definitions</key>
 						<dict>
+							<key>使用说明.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>../SwiftProjectScaffold/使用说明.swift</string>
+							</dict>
 							<key>Support/Info.plist</key>
 							<dict>
 								<key>Group</key>
