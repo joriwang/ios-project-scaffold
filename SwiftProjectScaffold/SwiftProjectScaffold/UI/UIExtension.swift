@@ -84,3 +84,18 @@ extension UITableViewCell {
         }
     }
 }
+
+extension UIStoryboard {
+    static var main: UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: .main)
+    }
+}
+
+extension UIViewController {
+    static func nibInstance(_ nibName: String? = nil) -> Self {
+        let name = nibName ?? String("\(Self.classForCoder())".split(separator: ".").last ?? "")
+        let targetVC = Self(nibName: name, bundle: .main)
+        targetVC.modalPresentationStyle = .fullScreen
+        return targetVC
+    }
+}
